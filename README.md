@@ -117,11 +117,11 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
     --no-epoch-checkpoints | tee -a fairseq-0.9.0/checkpoints/training.log
 
 
-python generate.py  /N/u/saswar/Quartz/fairseq-0.9.0/dest_en_te \
---path /N/u/saswar/Quartz/fairseq-0.9.0/checkpoints/checkpoint_best.pt \
+python generate.py  /N/u/ /Quartz/fairseq-0.9.0/dest_en_te \
+--path /N/u/ /Quartz/fairseq-0.9.0/checkpoints/checkpoint_best.pt \
 --batch-size 128 \
 --beam 5 \
---remove-bpe | tee -a /N/u/saswar/Quartz/fairseq-0.9.0/checkpoints/nmt_test.log
+--remove-bpe | tee -a /N/u/ /Quartz/fairseq-0.9.0/checkpoints/nmt_test.log
 
 
 NMT Model Training and evaluation done
@@ -131,12 +131,12 @@ src=en
 tgt=te
 bedropout=0.5
 ARCH=transformer_iwslt_de_en
-DATAPATH=/N/u/saswar/Quartz/fairseq-0.9.0/dest_en_te
+DATAPATH=/N/u/ /Quartz/fairseq-0.9.0/dest_en_te
 SAVEDIR=checkpoints/bpcc${src}_${tgt}_${bedropout}
 mkdir -p $SAVEDIR
 if [ ! -f $SAVEDIR/checkpoint_nmt.pt ]
 then
-    cp /N/u/saswar/Quartz/fairseq-0.9.0/checkpoints/checkpoint_best.pt $SAVEDIR/checkpoint_nmt.pt
+    cp /N/u/ /Quartz/fairseq-0.9.0/checkpoints/checkpoint_best.pt $SAVEDIR/checkpoint_nmt.pt
 fi
 if [ ! -f "$SAVEDIR/checkpoint_last.pt" ]
 then
